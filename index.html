@@ -19,9 +19,7 @@
       <span class="highlight">Our</span>
       TALENTS
     </div>
-
     <img class="menu" src="./images/elements/Hamburger Menu Icon.png" alt="">
-
   </div>
 </div>
 
@@ -41,7 +39,6 @@
         <p class="line main">COLLABORATE</p>
       </h1>
     </div>
-    </div>
 
     <p class="subtitle">
       Costruiamo identità digitali solide: direzione chiara, contenuti efficaci, crescita sostenibile.
@@ -53,6 +50,7 @@
       <img src="./images/elements/CAROUSEL_HomePage_Buga.png" alt="">
     </div>
   </section>
+
   <section class="btn-section">
     <div class="btn-container">
       <div class="btn-brand-container">
@@ -63,7 +61,53 @@
       </div>
     </div>
   </section>
+
+  <section class="content-section">
+    <h1><span class="highlight">COSA</span>FACCIAMO</h1>
+    <div>
+      <p>Lavoriamo con brand e creator attraverso un processo chiaro e integrato. 
+        Strategia, contenuti e crescita non sono fasi separate, ma parti dello stesso sistema. 
+        La produzione può essere gestita dal nostro team oppure direttamente dai talent, sempre con una direzione condivisa.</p>
+    </div>
+    <div class="btn-container-inverted">
+     <button class="btn">
+      STRATEGIA
+      <div class="btn-content">
+        <hr>
+        <p>- Analisi del contesto e degli obiettivi</p>
+        <p>- Posizionamento e direzione editoriale</p>
+        <p>- Messaggi e tone of voice</p>
+      </div>
+    </button>
+      <button class="btn">
+        CONTENUTI
+        <div class="btn-content">
+        <hr>
+        <p>- Ideazione e sviluppo dei format</p>
+        <p>- Linee guida e coordinamento Produzione (team o talent)</p>
+        <p>- Supporto o publishing e ottimizzazione</p>
+        </div>
+      </button>
+      <button class="btn">
+        CRESCITA
+        <div class="btn-content">
+        <hr>
+        <p>- Campagne e collaborazioni</p>
+        <p>- Attivazione Creator e partnership</p>
+        <p>- Monitoraggio, KPI e report</p>
+        </div>
+      </button>
+    </div>
+  </section>
+
   <script src="assets/js/main.js"></script>
+  <script>
+    document.querySelectorAll('.btn-container-inverted .btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('btn--active');
+      });
+    });
+  </script>
 </body>
 
 </html>
