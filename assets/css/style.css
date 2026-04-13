@@ -12,8 +12,8 @@
 
 @font-face {
   font-family: 'Futura';
-  src: url('../../fonts/Futura-Regular.woff2') format('woff2');
-  font-weight: 400;
+  src: url('../../fonts/Futura.woff2') format('woff2');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -81,7 +81,7 @@ body {
   overflow: visible;
 }
 
-/* usa uno pseudo-elemento per il background così non è limitato dall'altezza del div */
+
 .MENU_BAR::before {
   content: '';
   position: absolute;
@@ -268,7 +268,7 @@ height: 250px;
 .btn-creator-container:hover
 {
   color: white;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .btn-brand-container {
@@ -290,4 +290,98 @@ height: 250px;
   align-items: center;
   justify-content: center;
 }
+
+
+.content-section {
+  background-image: url(../../images/elements/COSA\ FACCIAMO_Background.png);
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  justify-content: flex-start; 
+  padding-top: 40px;      
+  text-align: center;    
+  width: 100%;
+  height: 2366px;
+  margin-top: -160px;
+}
+
+.content-section p {
+  width: 100%;  
+  max-width: 1320px;    
+  margin-bottom: 30px;   
+  font-family: var(--other-font);
+  font-weight: 300;
+  color: #FFFFFF;
+  font-size: 28px;
+  margin-top: -50px;
+}
+
+.content-section h1 {
+  font-size: 136px;
+  font-family: var(--primary-font);
+  color: #FFFFFF;
+  padding-top: 100px;
+  margin-bottom: 10px;
+}
+.btn-container-inverted {
+  display: flex;  
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 25px ;
+}
+
+
+.btn-container-inverted .btn {
+  padding: 28px;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  font-size: 60px;
+  font-family: var(--primary-font);
+  border-radius: 58px;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  transition: border-radius 0.3s ease, max-height 0.3s ease;
+  width: 480px;
+}
+
+.btn-container-inverted .btn .btn-content {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.btn-container-inverted .btn.btn--active .btn-content {
+  opacity: 1;
+  visibility: visible;
+  max-height: 400px;
+  transition-delay: 0.1s;
+}
+
+.btn-container-inverted .btn.btn--active {
+  border-radius: 38px; 
+}
+
+.btn-container-inverted .btn .btn-content hr {
+  border: 5px solid #308EAA;
+  margin: 20px auto;
+  color: #308EAA;
+  border-radius: 10px;
+  width: 90%; 
+  transition: opacity 0.3s ease
+}
+
+.btn-container-inverted .btn .btn-content p {
+  color: #2D5A67;
+  font-size: 23px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0;
+}
+
 
