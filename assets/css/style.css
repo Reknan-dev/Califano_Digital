@@ -6,6 +6,7 @@
   --primary-font: 'AllRoundGothic';
   --secondary-font: 'EverLooser';
   --other-font: 'Futura';
+  --random-font: 'ZTGrafton';
   
 }
 
@@ -42,6 +43,21 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'ZTGrafton';
+  src: url('../../fonts/ZTGrafton-Regular.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ZTGrafton';
+  src: url('../../fonts/ZTGrafton-Regular.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 
 .MENU_BAR {
   position: absolute;
@@ -111,7 +127,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .element-menu img {
@@ -137,15 +153,23 @@
 }
 
 
+/* ─── HERO ────────────────────────────────────────────────────────────────── */
 .hero {
   position: relative;
+  z-index: 1;
   background-color: black;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center;          
- min-height: 200vh;  
+  justify-content: center;
+  align-items: center;
+  min-height: 200vh;
   overflow: hidden;
+  box-sizing: border-box;
+
+  /* padding-top compensa la menu bar, padding-bottom sposta il centro
+     percepito verso l'alto (lontano dalla zona di overlap con content-section) */
+  padding-top: 80px;
+  padding-bottom: 300px;
 }
 
 
@@ -163,8 +187,9 @@
   z-index: 0;
 }
 
+/* ─── HEADLINE ────────────────────────────────────────────────────────────── */
 .headline {
-  padding-top: 300px;
+  /* rimosso padding-top: 300px fisso — ci pensa il flex della hero */
   width: 100%;
 }
 
@@ -273,6 +298,7 @@ margin-top: 83px;
   justify-content: center;
 }
 
+/* ─── CONTENT SECTION ────────────────────────────────────────────────────── */
 .content-section {
   background-image: url(../../images/elements/COSA\ FACCIAMO_Background.png);
   display: flex;
@@ -283,9 +309,11 @@ margin-top: 83px;
   text-align: center;    
   width: 100%;
   height: 2366px;
-  z-index: 3;
-  margin-top: -200px;
+
+  /* sovrapposizione: sale di 200px sopra la hero */
+  margin-top: -500px;
   position: relative;
+  z-index: 3;
 }
 
 .content-section p {
@@ -298,6 +326,12 @@ margin-top: 83px;
   font-size: 28px;
   margin-top: -50px;
 }
+
+.content-section h1 .highlight {
+  font-size: 148px;
+  margin-right: 10px;
+}
+
 
 .content-section h1 {
   font-size: 136px;
@@ -397,13 +431,135 @@ margin-top: 83px;
 }
 
 .brand-carousel {
-  width: 50%;
-  margin-right: 100px;
+  width: 40%;
+  margin-left: 100PX;
 }
 
 .list {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
+
+
+ /* WRAPPER */
+.accordion {
+  max-width: 50%;
+}
+
+/* ITEM */
+.accordion-item {
+  border-bottom: 2px solid #FFFFFF;
+}
+
+/* HEADER */
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  cursor: pointer;
+ 
+}
+
+/* LABEL */
+.accordion-label {
+  width: 100%;
+  max-width: 520px;
+  font-family: var(--random-font);
+  font-size: 31px;
+  color: white;
+  text-align: left;
+  line-height: 1.1;
+}
+
+/* HIGHLIGHT */
+.keyword {
+  font-family: 'EverLooser';
+  color: var(--color-accent);
+  font-size: 42px;
+  margin-left: 10px;
+}
+
+/* CHEVRON */
+.accordion-chevron {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.accordion-chevron svg {
+  width: 45px;
+  height: 45px;
+  stroke: var(--color-accent);
+  stroke-width: 3;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ROTAZIONE */
+.accordion-item.open .accordion-chevron {
+  transform: rotate(180deg);
+  
+}
+
+/* BODY */
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+
+  transition:
+    max-height 0.35s ease,
+    padding 0.35s ease;
+
+  padding: 0;
+}
+
+/* BODY OPEN */
+.accordion-item.open .accordion-body {
+  max-height: 200px;
+  padding-bottom: 24px;
+  padding-top: 24px;
+  border-top: 2px solid #FFFFFF;
+}
+
+/* TESTO */
+.accordion-body p {
+  width: 100%;
+  max-width: 500px;
+  margin: 0;
+  font-family: 'Futura';
+  font-size: 22px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+  text-align: left;
+}
+
+
+.btn-brand-container-carousel {
+  width: 432px;
+  height: 126px;
+  border: 6px solid var(--color-accent);
+  border-radius: 91px;
+  display: flex;
+  margin-top: 200px;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: var(--random-font);
+  font-size: 32px;
+  transition: 0.35s ease;
+}
+
+
+
+.btn-brand-container-carousel:hover {
+  background-color: var(--color-accent);
+}
+
