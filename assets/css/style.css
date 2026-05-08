@@ -142,14 +142,16 @@
 
 
 .image-container {
+  position: absolute;
+  left: 420px;
+  height: 130px;
   display: flex;
   align-items: center;
 }
 
 .logo {
-  left: 380px;
-  width: 376px;
   z-index: 40;
+  width: 500px;
 }
 
 
