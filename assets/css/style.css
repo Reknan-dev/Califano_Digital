@@ -1,15 +1,17 @@
+/* ═══════════════════════════════════════════════════════════════
+   VARIABILI & FONT
+═══════════════════════════════════════════════════════════════ */
+
 :root {
-  --color-primary: #27539F;
-  --color-accent: #F2B408;
-  --color-dark: #0C404F;
+  --color-primary:  #27539F;
+  --color-accent:   #F2B408;
+  --color-dark:     #0C404F;
 
-  --primary-font: 'AllRoundGothic';
-  --secondary-font: 'EverLooser';
-  --other-font: 'Futura';
-  --random-font: 'ZTGrafton';
-  
+  --font-primary:   'AllRoundGothic';
+  --font-display:   'EverLooser';
+  --font-body:      'Futura';
+  --font-grafton:   'ZTGrafton';
 }
-
 
 @font-face {
   font-family: 'Futura';
@@ -37,7 +39,7 @@
 
 @font-face {
   font-family: 'EverLooser';
-  src: url('../../fonts/EVER\ LOOSER\ UNTEXTURED.woff2') format('woff2');
+  src: url('../../fonts/EVER LOOSER UNTEXTURED.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -46,20 +48,37 @@
 @font-face {
   font-family: 'ZTGrafton';
   src: url('../../fonts/ZTGrafton-Regular.woff2') format('woff2');
-  font-weight: 700;
+  font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'ZTGrafton';
-  src: url('../../fonts/ZTGrafton-Regular.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+
+/* ═══════════════════════════════════════════════════════════════
+   UTILITY — classi riutilizzabili
+═══════════════════════════════════════════════════════════════ */
+
+/* Testo giallo accent (EverLooser) */
+.text--accent {
+  font-family: var(--font-display);
+  font-size: 40px;
+  color: var(--color-accent);
 }
 
-.MENU_BAR {
+/* Parola chiave gialla negli accordion */
+.text--keyword {
+  font-family: 'EverLooser';
+  color: var(--color-accent);
+  font-size: 42px;
+  margin-left: 10px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════════════════════════ */
+
+.navbar {
   position: absolute;
   top: 0;
   left: 0;
@@ -68,18 +87,25 @@
   background: transparent;
 }
 
-.MENU_BAR .highlight {
-  font-size: 40px;
-  color: var(--color-accent);
-  font-family: var(--secondary-font);
-
-}
-
-
-.talents {
+/* Logo centrato a sinistra */
+.navbar__logo-wrapper {
+  position: absolute;
+  left: 420px;
+  height: 110px;
   display: flex;
   align-items: center;
-  font-family: var(--primary-font);
+}
+
+.navbar__logo {
+  z-index: 40;
+  width: 500px;
+}
+
+/* Gruppo destra: label + swirl + hamburger */
+.navbar__right {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-primary);
   color: #FFFFFF;
   font-size: 40px;
   line-height: 1;
@@ -88,74 +114,56 @@
   padding-bottom: 6px;
 }
 
-.talents-text {
+.navbar__players-label {
   position: absolute;
   top: 30px;
   right: 150px;
   display: inline-block;
-  gap: 10px;
   margin-right: 66px;
-
 }
 
-.menu {
+/* Swirl decorativo accanto alla navbar */
+.navbar__swirl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.navbar__swirl img {
+  width: 1000px;
+  height: 454px;
+}
+
+/* Icona hamburger menu */
+.navbar__hamburger {
   position: absolute;
   top: 20px;
   right: 70px;
   width: 60px;
   height: 60px;
-  margin-bottom: 10px;
   z-index: 2;
 }
 
-.highlight {
-  font-family: var(--secondary-font);
-  font-size: 40px;
-  color: var(--color-accent);
-}
-
-
-.element-container{
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10; 
-  pointer-events: none; 
-}
-
-.element-menu {
+/* Curva decorativa angolo alto destra */
+.navbar__curve {
   position: absolute;
   top: 0;
   right: 0;
   z-index: 2;
 }
 
-.element-menu img {
+.navbar__curve img {
   width: 320px;
   height: 280px;
 }
 
-.element-container img {
-  width: 771;
-  height: 454;
-}
 
+/* ═══════════════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════════════ */
 
-.image-container {
-  position: absolute;
-  left: 420px;
-  height: 130px;
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  z-index: 40;
-  width: 500px;
-}
-
-
-/* ─── HERO ────────────────────────────────────────────────────────────────── */
 .hero {
   position: relative;
   z-index: 1;
@@ -168,19 +176,15 @@
   overflow: hidden;
   box-sizing: border-box;
 
-  /* padding-top compensa la menu bar, padding-bottom sposta il centro
-     percepito verso l'alto (lontano dalla zona di overlap con content-section) */
+  /* padding-top: compensa l'altezza della navbar
+     padding-bottom: sposta il centro visivo verso l'alto,
+     lontano dalla zona di overlap con la sezione successiva */
   padding-top: 80px;
   padding-bottom: 300px;
 }
 
-
-.btn-section {
-  z-index: 2;
-  width: 100%;
-}
-
-.hero-video {
+/* Video di sfondo */
+.hero__video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -189,313 +193,339 @@
   z-index: 0;
 }
 
-/* ─── HEADLINE ────────────────────────────────────────────────────────────── */
-.headline {
-  /* rimosso padding-top: 300px fisso — ci pensa il flex della hero */
+/* Overlay scuro sopra il video (se necessario) */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Blocco titolo CREATE / COMUNICATE / COLLABORATE */
+.hero__headline {
   width: 100%;
-}
-
-.headline h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-
-.headline,
-.subtitle,
-.click-container {
   z-index: 2;
 }
 
-
-.subtitle {
-  margin-top: 23px;
+.hero__headline h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-
-/* base comune */
-.line {
+.hero__line {
   display: block;
   line-height: 150px;
-
 }
 
-.line:last-child {
-  margin-top: -30px; 
+.hero__line:last-child {
+  margin-top: -30px;
 }
 
 /* CREATE + COLLABORATE */
-.main {
-  font-family: var(--primary-font);
+.hero__line--main {
+  font-family: var(--font-primary);
   font-size: 137px;
   color: #FFFFFF;
-  -webkit-text-stroke:#FFFFFF;
+  -webkit-text-stroke: #FFFFFF;
 }
 
-/* COMMUNICATE */
-.highlight {
-  font-family: var(--secondary-font);
+/* COMUNICATE */
+.hero__line--accent {
+  font-family: var(--font-display);
   font-size: 189px;
   color: var(--color-accent);
   width: 912px;
 }
 
-
-.subtitle {
-width: 706px;
-font-weight: bold;
-height: 79px;
-font-size: 30px;
-text-align: center;
-font-family: var(--other-font);
-letter-spacing: 0;
-line-height: 1.4;
-color: #FFFFFF;
+/* Sottotitolo */
+.hero__subtitle {
+  width: 706px;
+  font-family: var(--font-body);
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  line-height: 1.4;
+  color: #FFFFFF;
+  margin-top: 23px;
+  z-index: 2;
 }
 
-
-.click-container img {
-width: 595px;
-height: 195px;
-margin-top: 83px;
+/* Indicatore scroll */
+.hero__scroll-indicator {
+  z-index: 2;
 }
 
-.btn-container {
+.hero__scroll-indicator img {
+  width: 595px;
+  height: 195px;
+  margin-top: 83px;
+}
+
+/* Sezione CTA buttons */
+.hero__cta-section {
+  z-index: 2;
+  width: 100%;
+}
+
+.hero__cta-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 200px;
-  font-family: var(--primary-font);
+  font-family: var(--font-primary);
   color: var(--color-accent);
   font-size: 56px;
   margin-top: 60px;
 }
 
-.btn-brand-container:hover,
-.btn-creator-container:hover
-{
-  color: white;
-  transition: 0.3s;
+/* Base comune per i CTA button della hero */
+.cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 6px solid var(--color-accent);
+  border-radius: 70px;
+  transition: color 0.3s;
 }
 
-.btn-brand-container {
+.cta-btn:hover {
+  color: white;
+}
+
+.cta-btn--brand {
   width: 467px;
   height: 140px;
-  border: 6px solid var(--color-accent);
-  border-radius: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.btn-creator-container {
+.cta-btn--creator {
   width: 575px;
   height: 140px;
-  border: 6px solid var(--color-accent);
-  border-radius: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* ─── CONTENT SECTION ────────────────────────────────────────────────────── */
-.content-section {
+
+/* ═══════════════════════════════════════════════════════════════
+   SERVICES — "Cosa facciamo"
+═══════════════════════════════════════════════════════════════ */
+
+.services {
   background-image: url(../../images/elements/COSA\ FACCIAMO_Background.png);
   display: flex;
   flex-direction: column;
-  align-items: center;   
-  justify-content: flex-start; 
-  padding-top: 40px;      
-  text-align: center;    
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
   width: 100%;
   height: 2366px;
+  overflow: hidden;
+  padding-top: 40px;
 
-  /* sovrapposizione: sale di 200px sopra la hero */
+  /* Sovrappone la sezione hero dal basso */
   margin-top: -500px;
   position: relative;
   z-index: 3;
 }
 
-.content-section p {
-  width: 100%;  
-  max-width: 1320px;    
-  margin-bottom: 30px;   
-  font-family: var(--other-font);
-  font-weight: 300;
-  color: #FFFFFF;
-  font-size: 28px;
-  margin-top: -50px;
-}
-
-.content-section h1 .highlight {
-  font-size: 148px;
-  margin-right: 10px;
-}
-
-
-.content-section h1 {
+/* Titolo "COSA FACCIAMO" */
+.services__title {
   font-size: 136px;
-  font-family: var(--primary-font);
+  font-family: var(--font-primary);
   color: #FFFFFF;
   padding-top: 100px;
   margin-bottom: 10px;
 }
-.btn-container-inverted {
-  display: flex;  
+
+.services__title .text--accent {
+  font-size: 148px;
+  margin-right: 10px;
+}
+
+/* Paragrafo introduttivo */
+.services__intro {
+  width: 100%;
+  max-width: 1320px;
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 28px;
+  color: #FFFFFF;
+  margin-top: -50px;
+  margin-bottom: 30px;
+}
+
+/* ── Pillole espandibili ── */
+.services__pills {
+  display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
   width: 100%;
-  margin-top: 25px ;
+  margin-top: 25px;
   height: 100px;
 }
 
-
-.btn-container-inverted .btn {
+.pill {
   padding: 28px;
+  width: 480px;
   background-color: var(--color-accent);
   color: var(--color-primary);
   font-size: 60px;
-  font-family: var(--primary-font);
+  font-family: var(--font-primary);
   border-radius: 58px;
-  cursor: pointer;
   border: none;
+  cursor: pointer;
   text-align: center;
+  position: relative;
   transition: border-radius 0.3s ease, max-height 0.3s ease;
-  width: 480px;
-  position: relative; 
 }
 
-.btn-container-inverted .btn .btn-content {
+/* Contenuto nascosto della pillola */
+.pill__content {
   opacity: 0;
-  top: 100%;
   visibility: hidden;
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
-
-.btn-container-inverted .btn.btn--active .btn-content {
+/* Pillola aperta */
+.pill.pill--active .pill__content {
   opacity: 1;
   visibility: visible;
   max-height: 400px;
   transition-delay: 0.1s;
 }
 
-.btn-container-inverted .btn.btn--active {
-  border-radius: 38px; 
+.pill.pill--active {
+  border-radius: 38px;
 }
 
-.btn-container-inverted .btn .btn-content hr {
+.pill__content hr {
   border: 5px solid #308EAA;
+  border-radius: 10px;
+  width: 90%;
   margin: 20px auto;
   color: #308EAA;
-  border-radius: 10px;
-  width: 90%; 
-  transition: opacity 0.3s ease
+  transition: opacity 0.3s ease;
 }
 
-.btn-container-inverted .btn .btn-content p {
+.pill__content p {
   color: #2D5A67;
   font-size: 23px;
   font-weight: 300;
-  margin-bottom: 10px;
   width: 100%;
   max-width: 100%;
   margin-top: 0;
+  margin-bottom: 10px;
 }
 
+/* ── Sottosezione: Per i Brand ── */
+.brand-section__header {
+  margin-top: 200px;
+}
 
-.brand-highlight {
+.brand-section__header h1 {
+  font-size: 99px;
+  font-family: var(--font-primary);
+  color: #FFFFFF;
+}
+
+/* "Brand" in EverLooser giallo */
+.brand-section__title-accent {
   font-size: 207px;
-  font-family: var(--secondary-font);
+  font-family: var(--font-display);
   color: var(--color-accent);
   margin-left: 40px;
 }
 
-.brand-title {
-  margin-top: 200px;
+.brand-section__header p {
+  width: 1000px;
+  font-size: 30px;
+  color: #FFFFFF;
+  font-family: var(--font-body);
 }
 
-.brand-title h1 {
-  font-size: 99px;
-  
-}
-
-.brand-title p {
-  width: 900px;
-}
-
-.descriptions {
-  width: 50%;
-}
-
-.brand-carousel {
-  width: 40%;
-  margin-left: 100PX;
-}
-
-.list {
+/* Layout affiancato: accordion a sinistra, carousel a destra */
+.brand-section__content {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
- /* WRAPPER */
-.accordion {
-  max-width: 50%;
+/* CTA sotto l'accordion */
+.brand-section__cta {
+  width: 432px;
+  height: 126px;
+  border: 6px solid var(--color-accent);
+  border-radius: 91px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: var(--font-grafton);
+  font-size: 32px;
+  margin-top: 200px;
+  transition: background-color 0.35s ease;
+  cursor: pointer;
 }
 
-/* ITEM */
-.accordion-item {
+.brand-section__cta:hover {
+  background-color: var(--color-accent);
+}
+
+/* Carousel immagine */
+.brand-section__carousel {
+  width: 40%;
+  margin-left: 100px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   PROCESS ACCORDION — fasi del processo brand
+═══════════════════════════════════════════════════════════════ */
+
+.process-accordion {
+  max-width: 50%;
+  min-height: 600px;
+}
+
+/* Singola voce */
+.process-accordion__item {
   border-bottom: 2px solid #FFFFFF;
 }
 
-/* HEADER */
-.accordion-header {
+/* Header cliccabile */
+.process-accordion__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 0;
   cursor: pointer;
- 
 }
 
-/* LABEL */
-.accordion-label {
+/* Label testo */
+.process-accordion__label {
   width: 100%;
   max-width: 520px;
-  font-family: var(--random-font);
+  font-family: var(--font-grafton);
   font-size: 31px;
   color: white;
   text-align: left;
   line-height: 1.1;
 }
 
-/* HIGHLIGHT */
-.keyword {
-  font-family: 'EverLooser';
-  color: var(--color-accent);
-  font-size: 42px;
-  margin-left: 10px;
-}
-
-/* CHEVRON */
-.accordion-chevron {
+/* Chevron freccia */
+.process-accordion__chevron {
   width: 50px;
   height: 50px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: rotate(180deg); /* punta su di default */
   transition: transform 0.3s ease;
 }
 
-.accordion-chevron svg {
+.process-accordion__chevron svg {
   width: 45px;
   height: 45px;
   stroke: var(--color-accent);
@@ -505,63 +535,162 @@ margin-top: 83px;
   stroke-linejoin: round;
 }
 
-/* ROTAZIONE */
-.accordion-item.open .accordion-chevron {
-  transform: rotate(180deg);
-  
+/* Chevron ruota verso il basso quando aperto */
+.process-accordion__item.open .process-accordion__chevron {
+  transform: rotate(0deg);
 }
 
-/* BODY */
-.accordion-body {
+/* Corpo nascosto */
+.process-accordion__body {
   max-height: 0;
   overflow: hidden;
-
-  transition:
-    max-height 0.35s ease,
-    padding 0.35s ease;
-
   padding: 0;
+  transition: max-height 0.35s ease, padding 0.35s ease;
 }
 
-/* BODY OPEN */
-.accordion-item.open .accordion-body {
+/* Corpo aperto */
+.process-accordion__item.open .process-accordion__body {
   max-height: 200px;
-  padding-bottom: 24px;
   padding-top: 24px;
+  padding-bottom: 24px;
   border-top: 2px solid #FFFFFF;
 }
 
-/* TESTO */
-.accordion-body p {
+.process-accordion__body p {
   width: 100%;
   max-width: 500px;
   margin: 0;
-  font-family: 'Futura';
+  font-family: var(--font-body);
   font-size: 22px;
   line-height: 1.6;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   text-align: left;
 }
 
 
-.btn-brand-container-carousel {
-  width: 432px;
-  height: 126px;
-  border: 6px solid var(--color-accent);
-  border-radius: 91px;
+/* ═══════════════════════════════════════════════════════════════
+   CLIENTS — ticker loghi clienti
+═══════════════════════════════════════════════════════════════ */
+
+.clients {
+  background-image: url(../../images/elements/BG_CarouselClienti.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 700px;
   display: flex;
-  margin-top: 200px;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  /* Sovrappone leggermente la sezione precedente */
+  margin-top: -200px;
+  position: relative;
+  z-index: 4;
+}
+
+.clients__title {
+  font-size: 99px;
+  font-family: var(--font-primary);
+  color: var(--color-accent);
+}
+
+/* Wrapper con overflow hidden per mascherare il ticker */
+.clients__ticker-wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+/* Track animato */
+.clients__ticker-track {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  white-space: nowrap;
+  animation: ticker 20s linear infinite;
+}
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.clients__logo-item {
+  flex-shrink: 0;
+  margin-top: 50px;
+  margin-right: 50px;
+}
+
+.clients__logo {
+  width: 300px;
+  height: 200px;
+  object-fit: contain;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   CREATORS — sezione dedicata ai creator
+═══════════════════════════════════════════════════════════════ */
+
+.creators {
+  background-image: url(../../images/elements/PER\ I\ CREATOR_Background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 2000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Sovrappone la sezione clients dal basso */
+  margin-top: -270px;
+  position: relative;
+  z-index: 1;
+}
+
+.creators h1 {
+  font-family: var(--font-primary);
+  font-size: 99px;
+  color: var(--color-dark);
+}
+
+/* "Creator" in EverLooser blu */
+.creators__title-accent {
+  font-family: var(--font-display);
+  font-size: 182px;
+  color: var(--color-primary);
+}
+
+.creators p {
+  font-family: var(--font-body);
+  font-size: 25px;
+  color: var(--color-dark);
+  width: 1348px;
+  text-align: center;
+}
+
+.creators h2 {
+  font-family: var(--font-primary);
+  font-size: 67px;
   color: #FFFFFF;
-  font-family: var(--random-font);
-  font-size: 32px;
-  transition: 0.35s ease;
+  letter-spacing: 1px;
+  margin-top: 40px;
 }
 
-
-
-.btn-brand-container-carousel:hover {
-  background-color: var(--color-accent);
+/* "lavoriamo" in EverLooser blu */
+.creators__work-accent {
+  font-family: var(--font-display);
+  font-size: 126px;
+  color: var(--color-primary);
 }
 
+/* "?" in EverLooser blu */
+.creators__mark-accent {
+  font-family: var(--font-display);
+  font-size: 92px;
+  color: var(--color-primary);
+}

@@ -10,228 +10,297 @@
 </head>
 
 <body>
-  <div class="MENU_BAR">
-    <div class="image-container">
-      <img class="logo" src="./images/elements/logo.png" alt="">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════════════════ -->
+  <nav class="navbar">
+
+    <div class="navbar__logo-wrapper">
+      <img class="navbar__logo" src="./images/elements/logo.png" alt="Logo Califano Digital">
     </div>
-    <div class="talents">
-      <div class="talents-text">
-        <span class="highlight">Our</span>
+
+    <div class="navbar__right">
+      <div class="navbar__players-label">
+        <span class="text--accent">Our</span>
         PLAYERS
       </div>
-      <div class="element-container">
+      <div class="navbar__swirl">
         <img src="./images/elements/HEADER_Menu_Swirl.png" alt="">
       </div>
-      <img class="menu" src="./images/elements/Hamburger Menu Icon.png" alt="">
+      <img class="navbar__hamburger" src="./images/elements/Hamburger Menu Icon.png" alt="Menu">
     </div>
-  </div>
 
-  <div class="element-menu">
+  </nav>
+
+  <!-- Curva decorativa angolo in alto a destra -->
+  <div class="navbar__curve">
     <img src="./images/elements/Curve_HamburgerMenu.png" alt="">
   </div>
 
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HERO — video background con headline e CTA
+  ═══════════════════════════════════════════════════════════ -->
   <section class="hero">
 
-    <video class="hero-video" autoplay muted loop playsinline>
+    <video class="hero__video" autoplay muted loop playsinline>
       <source src="./videos/CALIFANO - video per sito 1920x1570 -25mb.mp4" type="video/mp4">
     </video>
 
-    <div class="hero-overlay"></div>
+    <div class="hero__overlay"></div>
 
-    <div class="headline">
+    <!-- Titolo principale -->
+    <div class="hero__headline">
       <h1>
-        <p class="line main">CREATE</p>
-        <p class="line highlight">COMUNICATE</p>
-        <p class="line main">COLLABORATE</p>
+        <span class="hero__line hero__line--main">CREATE</span>
+        <span class="hero__line hero__line--accent">COMUNICATE</span>
+        <span class="hero__line hero__line--main">COLLABORATE</span>
       </h1>
     </div>
 
-    <p class="subtitle">
+    <!-- Sottotitolo -->
+    <p class="hero__subtitle">
       Costruiamo identità digitali solide: direzione chiara, contenuti efficaci, crescita sostenibile.
     </p>
 
-    <div class="click-container">
-      <img src="./images/elements/SCOPRI SOTTO_HomePage.png" alt="">
+    <!-- Indicatore scroll -->
+    <div class="hero__scroll-indicator">
+      <img src="./images/elements/SCOPRI SOTTO_HomePage.png" alt="Scorri verso il basso">
     </div>
-    <div class="btn-section">
-      <div class="btn-container">
-        <div class="btn-brand-container">
-          PER I BRAND
-        </div>
-        <div class="btn-creator-container">
-          PER I CREATOR
-        </div>
+
+    <!-- CTA buttons -->
+    <div class="hero__cta-section">
+      <div class="hero__cta-buttons">
+        <div class="cta-btn cta-btn--brand">PER I BRAND</div>
+        <div class="cta-btn cta-btn--creator">PER I CREATOR</div>
       </div>
     </div>
 
   </section>
 
-  <section class="content-section">
-    <h1><span class="highlight">COSA</span>FACCIAMO</h1>
-    <div>
-      <p>Lavoriamo con brand e creator attraverso un processo chiaro e integrato.
-        Strategia, contenuti e crescita non sono fasi separate, ma parti dello stesso sistema.
-        La produzione può essere gestita dal nostro team oppure direttamente dai talent, sempre con una direzione
-        condivisa.</p>
-    </div>
-    <div class="btn-container-inverted">
-      <button class="btn">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       COSA FACCIAMO — servizi offerti + sezione brand
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="services">
+
+    <!-- Intestazione sezione -->
+    <h1 class="services__title">
+      <span class="text--accent">COSA</span>FACCIAMO
+    </h1>
+
+    <p class="services__intro">
+      Lavoriamo con brand e creator attraverso un processo chiaro e integrato.
+      Strategia, contenuti e crescita non sono fasi separate, ma parti dello stesso sistema.
+      La produzione può essere gestita dal nostro team oppure direttamente dai talent,
+      sempre con una direzione condivisa.
+    </p>
+
+    <!-- Pillole espandibili: Strategia / Contenuti / Crescita -->
+    <div class="services__pills">
+
+      <button class="pill">
         STRATEGIA
-        <div class="btn-content">
+        <div class="pill__content">
           <hr>
           <p>- Analisi del contesto e degli obiettivi</p>
           <p>- Posizionamento e direzione editoriale</p>
           <p>- Messaggi e tone of voice</p>
         </div>
       </button>
-      <button class="btn">
+
+      <button class="pill">
         CONTENUTI
-        <div class="btn-content">
+        <div class="pill__content">
           <hr>
           <p>- Ideazione e sviluppo dei format</p>
           <p>- Linee guida e coordinamento Produzione (team o talent)</p>
           <p>- Supporto o publishing e ottimizzazione</p>
         </div>
       </button>
-      <button class="btn">
+
+      <button class="pill">
         CRESCITA
-        <div class="btn-content">
+        <div class="pill__content">
           <hr>
           <p>- Campagne e collaborazioni</p>
           <p>- Attivazione Creator e partnership</p>
           <p>- Monitoraggio, KPI e report</p>
         </div>
       </button>
+
     </div>
-    <div class="brand-title">
-      <h1>PER I <span class="brand-highlight">Brand</span></h1>
+
+    <!-- ── Sottosezione: Per i Brand ── -->
+    <div class="brand-section__header">
+      <h1>PER I <span class="brand-section__title-accent">Brand</span></h1>
       <p>Costruiamo partnership tra brand e talent, curate in ogni dettaglio.
         Gestiamo l'intero processo per garantire coerenza, qualità e risultati.</p>
     </div>
-    <div class="list">
-      <div class="accordion">
 
-        <div class="accordion-item">
+    <!-- Accordion + Carousel affiancati -->
+    <div class="brand-section__content">
 
-          <div class="accordion-header">
+      <!-- Accordion: fasi del processo -->
+      <div class="process-accordion">
 
-            <span class="accordion-label">
-              <span>SELEZIONE DEI<span class="keyword"> TALENT</span></span>
+        <div class="process-accordion__item">
+          <div class="process-accordion__header">
+            <span class="process-accordion__label">
+              SELEZIONE DEI<span class="text--keyword"> TALENT</span>
             </span>
-
-            <span class="accordion-chevron">
-              <svg viewBox="0 0 24 24">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
+            <span class="process-accordion__chevron">
+              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
           </div>
-          <div class="accordion-body">
-            <p>
-              Individuiamo i profili più adatti per valori, contenuti e community.
-            </p>
+          <div class="process-accordion__body">
+            <p>Individuiamo i profili più adatti per valori, contenuti e community.</p>
           </div>
         </div>
-        <div class="accordion-item">
 
-          <div class="accordion-header">
-
-            <span class="accordion-label">
-              <span>LA<span class="keyword"> Collaborazione</span></span>
+        <div class="process-accordion__item">
+          <div class="process-accordion__header">
+            <span class="process-accordion__label">
+              LA<span class="text--keyword"> Collaborazione</span>
             </span>
-
-            <span class="accordion-chevron">
-              <svg viewBox="0 0 24 24">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
+            <span class="process-accordion__chevron">
+              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
           </div>
-          <div class="accordion-body">
-            <p>
-              Strutturiamo format, messaggi e modalità di attivazione.
-            </p>
+          <div class="process-accordion__body">
+            <p>Strutturiamo format, messaggi e modalità di attivazione.</p>
           </div>
         </div>
-        <div class="accordion-item">
 
-          <div class="accordion-header">
-
-            <span class="accordion-label">
-              <span>GESTIONE<span class="keyword"> Operativa</span></span>
+        <div class="process-accordion__item">
+          <div class="process-accordion__header">
+            <span class="process-accordion__label">
+              GESTIONE<span class="text--keyword"> Operativa</span>
             </span>
-
-            <span class="accordion-chevron">
-              <svg viewBox="0 0 24 24">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
+            <span class="process-accordion__chevron">
+              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
           </div>
-          <div class="accordion-body">
-            <p>
-              Coordiniamo i talent, le tempistiche e I deliverable.
-            </p>
+          <div class="process-accordion__body">
+            <p>Coordiniamo i talent, le tempistiche e i deliverable.</p>
           </div>
         </div>
-        <div class="accordion-item">
 
-          <div class="accordion-header">
-
-            <span class="accordion-label">
-              <span>CHIUSURA E<span class="keyword"> Report</span></span>
+        <div class="process-accordion__item">
+          <div class="process-accordion__header">
+            <span class="process-accordion__label">
+              CHIUSURA E<span class="text--keyword"> Report</span>
             </span>
-
-            <span class="accordion-chevron">
-              <svg viewBox="0 0 24 24">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
+            <span class="process-accordion__chevron">
+              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
           </div>
-          <div class="accordion-body">
-            <p>
-              Verifichiamo risultati, consegniamo materiali e reportistica.
-            </p>
+          <div class="process-accordion__body">
+            <p>Verifichiamo risultati, consegniamo materiali e reportistica.</p>
           </div>
         </div>
-       
-          <div class="btn-brand-container-carousel">
-            LAVORA CON<br> I NOSTRI TALENT
-          </div>
-    
+
+        <!-- CTA sotto l'accordion -->
+        <div class="brand-section__cta">
+          LAVORA CON<br>I NOSTRI TALENT
+        </div>
+
       </div>
-      <div class="brand-carousel">
-        <img src="./images/elements/PER I BRAND_Carousel.png" alt="">
+      <!-- /process-accordion -->
+
+      <!-- Carousel immagine brand -->
+      <div class="brand-section__carousel">
+        <img src="./images/elements/PER I BRAND_Carousel.png" alt="Carousel brand">
+      </div>
+
+    </div>
+    <!-- /brand-section__content -->
+
+  </section>
+  <!-- /services -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       LAVORIAMO CON — ticker loghi clienti
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="clients">
+
+    <h1 class="clients__title">LAVORIAMO CON</h1>
+
+    <div class="clients__ticker-wrapper">
+      <div class="clients__ticker-track">
+
+        <!-- Loghi originali -->
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/glovo.png" alt="Glovo"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/mattel.png" alt="Mattel"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/MyHeritage.png" alt="MyHeritage"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/serenis.png" alt="Serenis"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/TradeRepublic.png" alt="Trade Republic"></div>
+
+        <!-- Duplicati per loop seamless -->
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/glovo.png" alt="Glovo"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/mattel.png" alt="Mattel"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/MyHeritage.png" alt="MyHeritage"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/serenis.png" alt="Serenis"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/TradeRepublic.png" alt="Trade Republic"></div>
+
       </div>
     </div>
-    </div>
+
   </section>
 
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PER I CREATOR — sezione dedicata ai creator
+  ═══════════════════════════════════════════════════════════ -->
+  <section class="creators">
+
+    <h1>PER I <span class="creators__title-accent">Creator</span></h1>
+
+    <p>
+      Affianchiamo creator che vogliono trasformare il proprio progetto in qualcosa di strutturato e sostenibile.<br>
+      Il nostro lavoro unisce consulenza strategica e management operativo,
+      adattandosi al modo di lavorare di ogni talent.
+    </p>
+
+    <h2>
+      COME <span class="creators__work-accent">lavoriamo</span> CON TE<span class="creators__mark-accent">?</span>
+    </h2>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════════════════════ -->
   <script src="assets/js/main.js"></script>
   <script>
-    document.querySelectorAll('.btn-container-inverted .btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.classList.toggle('btn--active');
+
+    // ── Pillole espandibili (Strategia / Contenuti / Crescita) ──
+    document.querySelectorAll('.services__pills .pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        pill.classList.toggle('pill--active');
       });
     });
-    document.querySelectorAll('.accordion-header').forEach(header => {
 
+    // ── Accordion processo brand (si apre uno alla volta) ──
+    document.querySelectorAll('.process-accordion__header').forEach(header => {
       header.addEventListener('click', () => {
-
         const item = header.parentElement;
         const isOpen = item.classList.contains('open');
 
         // chiudi tutti
-        document.querySelectorAll('.accordion-item').forEach(el => {
+        document.querySelectorAll('.process-accordion__item').forEach(el => {
           el.classList.remove('open');
         });
 
-        // riapri solo quello cliccato
-        if (!isOpen) {
-          item.classList.add('open');
-        }
-
+        // apri quello cliccato (se era chiuso)
+        if (!isOpen) item.classList.add('open');
       });
-
     });
-  </script>
-</body>
 
+  </script>
+
+</body>
 </html>
