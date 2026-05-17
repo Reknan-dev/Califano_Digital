@@ -781,6 +781,9 @@
 
 .embla__slide {
   flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 0;
 }
 
@@ -790,17 +793,6 @@
   justify-content: center;
   gap: 16px;
   margin-top: 20px;
-}
-
-.embla__btn {
-  background: none;
-  border: 2px solid #308EAA;
-  color: #308EAA;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  font-size: 18px;
-  cursor: pointer;
 }
 
 .embla__dots {
@@ -821,7 +813,90 @@
 .embla__dot--selected {
   background: #308EAA;
 }
+.embla__btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 150px;  
+  height: 150px;
+}
 
+.embla__btn img {
+  width: 150px;  
+  height: 150px;
+  object-fit: contain;
+}
+
+.carousel__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dots__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.creator__wrapper {
+  position: relative;
+  width: 478px;
+  height: 566px;
+}
+
+.creator {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.creator__frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none; /* non blocca i click */
+}
+
+.platform__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.platform__card {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.creator__frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  
+}
+
+.platform__card img {
+  width: 400px;
+  display: block;
+}
+
+.platform__card .card__text {
+  position: absolute;
+  text-align: center;
+  top: 32%;
+  left: 23%;
+  font-size: 34px;
+  color: #FFFF;
+  font-family: var(--font-grafton);
+}
 .carousel__content {
   display: flex;
   justify-content: center;
@@ -842,6 +917,8 @@
   color: var(--color-dark);
   text-align: center;
 }
+
+
 
 .carousel-section__title-accent {
   font-size: 181px;
