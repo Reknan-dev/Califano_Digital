@@ -602,27 +602,23 @@
 .clients__ticker-wrapper {
   width: 100%;
   overflow: hidden;
-  display: flex;
 }
 
 /* Track animato */
 .clients__ticker-track {
   display: flex;
-  gap: 80px;
-  align-items: center;
-  white-space: nowrap;
-  animation: ticker 20s linear infinite;
+  width: max-content;
+  animation: ticker 30s linear infinite;
 }
 
 @keyframes ticker {
-  0%   { transform: translateX(0); }
+  0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
 .clients__logo-item {
-  flex-shrink: 0;
-  margin-top: 50px;
-  margin-right: 50px;
+  flex: 0 0 auto;
+  padding: 0 40px; /* usa padding invece di gap/margin */
 }
 
 .clients__logo {
@@ -781,6 +777,7 @@
 
 .embla__slide {
   flex: 0 0 100%;
+  height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -801,8 +798,9 @@
 }
 
 .embla__dot {
-  width: 10px;
-  height: 10px;
+
+  width: 15px;
+  height: 16px;
   border-radius: 50%;
   background: #ccc;
   border: none;
@@ -860,6 +858,41 @@
   height: 100%;
   object-fit: contain;
   pointer-events: none; /* non blocca i click */
+}
+
+.featured__frame {
+  position: absolute;
+  top: -40px;
+  left: -100px;
+}
+
+.btn__discovery {
+  font-size: 20px;
+  font-family: var(--font-grafton);
+  color: #FFFF;
+  border-radius: 56px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 228px;
+  height: 48px;
+  background-color: var(--color-accent);
+  position: absolute;
+  bottom: 0;
+  left: 140px;
+}
+
+.creator__data h2 {
+  font-size: 63px;
+  font-family: var(--font-grafton);
+  color: var(--color-dark);
+}
+
+.creator__data p {
+  font-size: 32px;
+  font-family: var(--font-body);
+  color: var(--color-blue);
 }
 
 .platform__container {
@@ -1094,3 +1127,6 @@ footer {
 .footer__logo {
   width: 376px;
 }
+
+
+
