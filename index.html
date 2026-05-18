@@ -15,7 +15,53 @@
        NAVBAR
   ═══════════════════════════════════════════════════════════ -->
   <nav class="navbar">
+<!-- ═══════════════════════════════════════════════════════════
+     FULLSCREEN MENU OVERLAY
+     Inserisci questo blocco subito DOPO .navbar__curve
+═══════════════════════════════════════════════════════════ -->
 
+<div class="menu-backdrop" id="menu-backdrop"></div>
+
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+
+
+  <!-- Header: logo + X -->
+  <div class="menu-overlay__header">
+    <img class="menu-overlay__logo" src="./images/elements/logo.png" alt="Califano Digital">
+
+  </div>
+
+  <!-- Voci di navigazione -->
+  <nav class="menu-overlay__nav" aria-label="Menu principale">
+
+    <a href="#" class="menu-nav__item">
+      <span class="menu-nav__accent">Home</span>
+      <span class="menu-nav__main">Page</span>
+    </a>
+
+    <a href="#players" class="menu-nav__item">
+      <span class="menu-nav__accent">Our</span>
+      <span class="menu-nav__main">Players</span>
+    </a>
+
+    <a href="#brand" class="menu-nav__item">
+      <span class="menu-nav__accent">Per i</span>
+      <span class="menu-nav__main">Brand</span>
+    </a>
+
+    <a href="#creators" class="menu-nav__item">
+      <span class="menu-nav__accent">Per i</span>
+      <span class="menu-nav__main">Creator</span>
+    </a>
+
+    <a href="#contact" class="menu-nav__item">
+      <span class="menu-nav__accent">Come</span>
+      <span class="menu-nav__main">Contattarci</span>
+    </a>
+
+  </nav>
+
+</div>
     <div class="navbar__logo-wrapper">
       <img class="navbar__logo" src="./images/elements/logo.png" alt="Logo Califano Digital">
     </div>
@@ -459,6 +505,46 @@
   ═══════════════════════════════════════════════════════════ -->
   <script src="assets/js/main.js"></script>
   <script>
+
+    // ── Menu fullscreen overlay ──────────────────────────────────
+
+const menuOverlay  = document.getElementById('menu-overlay');
+const menuBackdrop = document.getElementById('menu-backdrop');
+const menuClose    = document.getElementById('menu-close');
+const hamburger    = document.querySelector('.navbar__hamburger');
+
+function openMenu() {
+  menuOverlay.classList.add('is-open');
+  menuBackdrop.classList.add('is-open');
+  menuOverlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden'; // blocca scroll pagina
+}
+
+function closeMenu() {
+  menuOverlay.classList.remove('is-open');
+  menuBackdrop.classList.remove('is-open');
+  menuOverlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+// Apri al click sull'hamburger
+hamburger.addEventListener('click', openMenu);
+
+// Chiudi con il tasto X
+menuClose.addEventListener('click', closeMenu);
+
+// Chiudi cliccando fuori (backdrop)
+menuBackdrop.addEventListener('click', closeMenu);
+
+// Chiudi con ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMenu();
+});
+
+// Chiudi al click su una voce del menu (smooth scroll)
+document.querySelectorAll('.menu-nav__item').forEach(item => {
+  item.addEventListener('click', () => closeMenu());
+});
 
     // ── Pillole espandibili (Strategia / Contenuti / Crescita) ──
     document.querySelectorAll('.services__pills .pill').forEach(pill => {
