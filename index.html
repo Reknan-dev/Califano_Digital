@@ -17,7 +17,6 @@
   <nav class="navbar">
 <!-- ═══════════════════════════════════════════════════════════
      FULLSCREEN MENU OVERLAY
-     Inserisci questo blocco subito DOPO .navbar__curve
 ═══════════════════════════════════════════════════════════ -->
 
 <div class="menu-backdrop" id="menu-backdrop"></div>
@@ -26,7 +25,7 @@
   <!-- Header: logo + X -->
   <div class="menu-overlay__header">
     <img class="menu-overlay__logo" src="./images/elements/logo.png" alt="Califano Digital">
-
+    <img class="navbar__hamburger-white" src="./images/elements/hamburger-menu-white.png" alt="">
   </div>
 
   <!-- Voci di navigazione -->
@@ -292,7 +291,16 @@
         <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/Babbel.png" alt="Babbel"></div>
         <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/Fiscozen.png" alt="Fiscozen"></div>
         <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/HelloFresh.png" alt="HelloFresh"></div>
-        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/June.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/Funko Pop.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/GDGPR png.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/Hoyoverse.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/knorr.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/Nescafe png.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/Nintendo.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/Pegaso png.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/WEPLAY.png" alt="June"></div>
+
+
 
 
         <!-- Duplicati per loop seamless -->
@@ -304,7 +312,14 @@
         <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/Babbel.png" alt="Babbel"></div>
         <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/Fiscozen.png" alt="Fiscozen"> </div>
         <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/HelloFresh.png" alt="HelloFresh"></div>
-        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/June.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/Funko Pop.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/GDGPR png.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/Hoyoverse.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/knorr.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/Nescafe png.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/Nintendo.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/Pegaso png.png" alt="June"></div>
+        <div class="clients__logo-item"><img class="clients__logo" src="./images/brands/WEPLAY.png" alt="June"></div>
       </div>
     </div>
 
@@ -336,8 +351,8 @@
         </div>
         <div class="card__bottom">
           <hr class="card__divider">
-          <p class="card__sub">Ti aiutiamo a definire identità, <br> messaggi e obiettivi, così da avere una direzione
-            br chiara
+          <p class="card__sub">Ti aiutiamo a definire identità, <br> posizionamento, tov e obiettivi, <br> così da avere una direzione<br>
+             chiara
             nel tempo.</p>
         </div>
       </div>
@@ -450,8 +465,8 @@
 
     <div class="contact-title">
       <p>
-        Un<span class="contact-section__title-accent">Caffe’</span>, un <span
-          class="contact-section__title-accent">Dolcino</span>, <br> come possiamo aiutarti?
+        Una<span class="contact-section__title-accent"> Collaborazione?</span> una<span
+          class="contact-section__title-accent"> Strategia?</span><br> come possiamo aiutarti?
       </p>
     </div>
 
@@ -463,7 +478,7 @@
         <input class="contact__input" type="email" placeholder="Email">
       </div>
 
-      <textarea class="contact__textarea" placeholder="Cosa cerchi"></textarea>
+      <textarea class="contact__textarea" placeholder="Testo"></textarea>
 
       <div class="contact__footer">
         <button class="contact__btn" type="submit">
@@ -508,8 +523,8 @@
 
 const menuOverlay  = document.getElementById('menu-overlay');
 const menuBackdrop = document.getElementById('menu-backdrop');
-const menuClose    = document.getElementById('menu-close');
 const hamburger    = document.querySelector('.navbar__hamburger');
+const negative_hamburger = document.querySelector('.navbar__hamburger-white ')
 
 function openMenu() {
   menuOverlay.classList.add('is-open');
@@ -529,7 +544,7 @@ function closeMenu() {
 hamburger.addEventListener('click', openMenu);
 
 // Chiudi con il tasto X
-menuClose.addEventListener('click', closeMenu);
+negative_hamburger.addEventListener('click', closeMenu);
 
 // Chiudi cliccando fuori (backdrop)
 menuBackdrop.addEventListener('click', closeMenu);
