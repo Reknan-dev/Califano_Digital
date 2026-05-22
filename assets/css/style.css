@@ -1094,7 +1094,7 @@
 }
 
 footer {
-  background-image: url(/images/elements/BG_FOOTER.png);
+  background-image: url(../../images/elements/BG_FOOTER.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
