@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Califano Digital</title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════════════════ -->
+  <nav class="navbar">
+<!-- ═══════════════════════════════════════════════════════════
+     FULLSCREEN MENU OVERLAY
+═══════════════════════════════════════════════════════════ -->
+
+<div class="menu-backdrop" id="menu-backdrop"></div>
+
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <!-- Header: logo + X -->
+  <div class="menu-overlay__header">
+    <img class="menu-overlay__logo" src="./images/elements/logo.png" alt="Califano Digital">
+    <img class="navbar__hamburger-white" src="./images/elements/hamburger-menu-white.png" alt="">
+  </div>
+
+  <!-- Voci di navigazione -->
+  <nav class="menu-overlay__nav" aria-label="Menu principale">
+
+    <a href="./index.html" class="menu-nav__item">
+      <span class="menu-nav__accent">Home</span>
+      <span class="menu-nav__main">Page</span>
+    </a>
+
+    <a href="#players" class="menu-nav__item">
+      <span class="menu-nav__accent">Our</span>
+      <span class="menu-nav__main">Players</span>
+    </a>
+
+    <a href="#brand" class="menu-nav__item">
+      <span class="menu-nav__accent">Per i</span>
+      <span class="menu-nav__main">Brand</span>
+    </a>
+
+    <a href="#creators" class="menu-nav__item">
+      <span class="menu-nav__accent">Per i</span>
+      <span class="menu-nav__main">Creator</span>
+    </a>
+
+    <a href="" class="menu-nav__item">
+      <span class="menu-nav__accent">Come</span>
+      <span class="menu-nav__main">Contattarci</span>
+    </a>
+
+  </nav>
+
+</div>
+    <div class="navbar__logo-wrapper">
+      <img class="navbar__logo" src="./images/elements/logo.png" alt="Logo Califano Digital">
+    </div>
+
+    <div class="navbar__right-contact-contact">
+      <div class="navbar__players-label">
+        <span class="text--accent">HOME</span>
+        PAGE
+      </div>
+      <div class="navbar__swirl">
+        <img src="./images/elements/HEADER_Menu_Swirl.png" alt="">
+      </div>
+      <img class="navbar__hamburger" src="./images/elements/Hamburger Menu Icon.png" alt="Menu">
+    </div>
+
+  </nav>
+
+  <!-- Curva decorativa angolo in alto a destra -->
+  <div class="navbar__curve">
+    <img src="./images/elements/Curve_HamburgerMenu.png" alt="">
+  </div>
+
+
+<section class="maps">
+  <h1 class="contact__title">COME <br><span>Contattarci</span></h1>
+  
+
+<iframe
+  width="100%"
+  height="400"
+  frameborder="0"
+  scrolling="no"
+  src="https://www.openstreetmap.org/export/embed.html?bbox=14.305%2C41.070%2C14.318%2C41.080&layer=mapnik&marker=41.07502%2C14.31174">
+</iframe>
+</section>
+
+  <section class="contact">
+
+    <div class="contact-title">
+      <p>
+        Una<span class="contact-section__title-accent"> Collaborazione?</span> una<span
+          class="contact-section__title-accent"> Strategia?</span><br> come possiamo aiutarti?
+      </p>
+    </div>
+
+    <form class="contact__form">
+
+      <div class="contact__row">
+        <input class="contact__input" type="text" placeholder="Nome">
+        <input class="contact__input" type="text" placeholder="Brand o Creator">
+        <input class="contact__input" type="email" placeholder="Email">
+      </div>
+
+      <textarea class="contact__textarea" placeholder="Testo"></textarea>
+
+      <div class="contact__footer">
+        <button class="contact__btn" type="submit">
+          INVIA
+          <img class="mail__icon" src="./images/elements/Invio_Icon.png" alt="">
+          </svg>
+        </button>
+      </div>
+
+    </form>
+  </section>
+
+
+
+  <footer>
+    <div class="footer__logo-container">
+      <img class="footer__logo" src="./images/elements/logo.png" alt="">
+    </div>
+    <div class="address__container">
+      <p>via Lampa n. 3 - Castel Morrone (CE) <br> P.IVA 04630310615 info@califanodigital.it</p>
+    </div>
+    <div class="social__container">
+      <div class="social__logo">
+        <img class="social" src="./images/elements/Facebook_Icon.png" alt="">
+        <img class="social" src="./images/elements/TikTok_Icon.png" alt="">
+        <img class="social" src="./images/elements/Instagram_Icon.png" alt="">
+      </div>
+      <div class="rights__container">
+        <p>©2026. All rights reserved.</p>
+      </div>
+    </div>
+
+
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════════════════════ -->
+  <script src="assets/js/main.js"></script>
+  <script>
+
+    // ── Menu fullscreen overlay ──────────────────────────────────
+
+const menuOverlay  = document.getElementById('menu-overlay');
+const menuBackdrop = document.getElementById('menu-backdrop');
+const hamburger    = document.querySelector('.navbar__hamburger');
+const negative_hamburger = document.querySelector('.navbar__hamburger-white ')
+
+function openMenu() {
+  menuOverlay.classList.add('is-open');
+  menuBackdrop.classList.add('is-open');
+  menuOverlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden'; // blocca scroll pagina
+}
+
+function closeMenu() {
+  menuOverlay.classList.remove('is-open');
+  menuBackdrop.classList.remove('is-open');
+  menuOverlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+// Apri al click sull'hamburger
+hamburger.addEventListener('click', openMenu);
+
+// Chiudi 
+negative_hamburger.addEventListener('click', closeMenu);
+
+// Chiudi cliccando fuori (backdrop)
+menuBackdrop.addEventListener('click', closeMenu);
+
+// Chiudi con ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMenu();
+});
+
+// Chiudi al click su una voce del menu (smooth scroll)
+document.querySelectorAll('.menu-nav__item').forEach(item => {
+  item.addEventListener('click', () => closeMenu());
+});
+
+  </script>
+</body>
+
+</html>

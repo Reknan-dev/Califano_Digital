@@ -146,6 +146,7 @@
   width: 60px;
   height: 60px;
   z-index: 2;
+  cursor: pointer;
 }
 
 /* Curva decorativa angolo alto destra */
@@ -525,7 +526,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(180deg); /* punta su di default */
   transition: transform 0.3s ease;
 }
 
@@ -541,7 +541,7 @@
 
 /* Chevron ruota verso il basso quando aperto */
 .process-accordion__item.open .process-accordion__chevron {
-  transform: rotate(0deg);
+  transform: rotate(180deg);
 }
 
 /* Corpo nascosto */
@@ -1298,89 +1298,26 @@ footer {
   width: 60px;
   height: 60px;
   z-index: 2;
+  cursor: pointer;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════════════════════════ */
 
-/* ── LAPTOP PICCOLO (1024px – 1280px) ── */
-@media (max-width: 1280px) {
+.contact__title {
+  font-size: 117px;
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+  margin-bottom: 100px;
+}
 
-  .navbar__logo-wrapper {
-    left: 200px;
-  }
-
-  .navbar__logo {
-    width: 380px;
-  }
-
-  .navbar__swirl img {
-    width: 700px;
-  }
-
-  .navbar__players-label {
-    font-size: 28px;
-  }
+.contact__title span {
+  font-size: 221px;
+  font-family: var(--font-display);
+  color: var(--color-accent);
 
 }
 
-/* ── TABLET (768px – 1024px) ── */
-@media (max-width: 1024px) {
-
-  .navbar__logo-wrapper {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .navbar__logo {
-    width: 300px;
-  }
-
-  .navbar__swirl img {
-    width: 500px;
-  }
-
-  .navbar__players-label {
-    display: none;
-  }
-
-
-}
-
-/* ── MOBILE (< 768px) ── */
-@media (max-width: 768px) {
-
-  .navbar__logo-wrapper {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .navbar__logo {
-    width: 220px;
-  }
-
-  .navbar__swirl img {
-    width: 360px;
-  }
-
-  .navbar__players-label {
-    display: none;
-  }
-
-  .navbar__curve img {
-    width: 160px;
-  }
-
-  .navbar__hamburger {
-    width: 44px;
-    height: 44px;
-    right: 20px;
-  }
-
-  .navbar__swirl img {
-  width: 1000px;
-  height: auto; 
-}
-
+.maps {
+  padding-top: 300px;
+  text-align: center;
+  line-height: 130px;
 }
