@@ -1204,8 +1204,8 @@ footer {
 
 .menu-overlay__logo {
   position: absolute;
-  top: 10px;
-  width: 376px;
+  margin-top: 50px;
+  width: 500px;
 }
 
 .menu-close {
@@ -1228,6 +1228,7 @@ footer {
 
 /* ── Navigazione centrale ── */
 .menu-overlay__nav {
+  margin-top: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1238,6 +1239,7 @@ footer {
 
 .menu-nav__item {
   display: flex;
+  margin-bottom: 23px;
   align-items: baseline;
   gap: 18px;
   text-decoration: none;
@@ -1320,4 +1322,16 @@ footer {
   padding-top: 300px;
   text-align: center;
   line-height: 130px;
+}
+
+.navbar__right-contact {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  font-size: 40px;
+  line-height: 1;
+  height: 58px;
+  padding-top: 17px;
+  padding-bottom: 6px;
 }
