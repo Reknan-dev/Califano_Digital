@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: 'Futura';
-  src: url('../../fonts/Futura.woff2') format('woff2');
+  src: url('../../fonts/Futura-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -1335,3 +1335,103 @@ footer {
   padding-top: 17px;
   padding-bottom: 6px;
 }
+
+.description__team {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 300px;
+}
+
+.description__team h1 {
+ width: 60%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 106px;
+ font-family: var(--font-primary);
+ color: var(--color-primary);
+}
+
+.description__team h1 span {
+  font-size: 200px
+}
+
+.description__container {
+  font-size: 23px;
+  font-family: var(--font-body);
+  width: 60%;
+}
+.description__container p {
+  margin-bottom: 31px;
+  color: var(--color-dark);
+  line-height: 30px;
+  
+}
+
+.description__team .accent {
+  font-family: var(--font-display);
+  color: var(--color-accent);
+  margin-left: 73px;
+}
+
+.navbar__right-contact {
+  background-image: url(../../images/elements/BG_TalentPage_BGLines.png);
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  width: 100%;
+}
+
+.description__container .title {
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.accent-creator {
+  font-size: 44px;
+  font-family: var(--font-display);
+  color: var(--color-accent);
+}
+
+.accent-brand {
+  font-size: 44px;
+  font-family: var(--font-display);
+  color: var(--color-primary);
+}
+
+.image-staff__container {
+  background-image: url(../../images/elements/BG_TalentPage_BGLines.png);
+  display: flex;
+  flex-wrap: wrap;
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+ padding-bottom: 200px;
+}
+
+.image__container {
+  width: 25%;
+  text-align: center;
+}
+
+.image__container .job {
+  font-size: 19px;
+  font-family: var(--font-body);
+  color: var(--color-blue);
+}
+
+.image__container .name {
+  font-size: 38px;
+  font-family: var(--font-primary);
+  color: var(--color-dark);
+    display: flex;
+  flex-direction: column;
+}
+
+.image__container .email {
+    font-size: 19px;
+  font-family: var(--font-body);
+  color: var(--color-blue);
+} 
