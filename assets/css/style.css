@@ -1431,7 +1431,108 @@ footer {
 }
 
 .image__container .email {
-    font-size: 19px;
+  font-size: 19px;
   font-family: var(--font-body);
   color: var(--color-blue);
 } 
+
+/* ── Players Section ── */
+.players {
+  min-height: 100vh;        
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 200px;
+}
+
+.players h1 {
+  font-size: 125px;   
+  color: var(--color-primary);
+  font-family: var(--font-primary);
+}
+
+.players h1 span {
+  font-size: 221px;  
+  color: var(--color-accent);
+  font-family: var(--font-display);               
+}
+
+.filter__container {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-dark);
+  width: 100%;
+  height: 160px;
+  gap: 45px;
+  align-items: center; 
+}
+
+.filter-box {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-accent);
+  border-radius: 39px;
+  padding: 1.5rem 2rem;  
+}
+
+.filter-box p {
+  font-size: 28px;
+  font-family: var(--font-body);
+  color: #FFFF;
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.filter-box label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  font-style: italic;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+
+.filter-box input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 6px solid white;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+/* Stato selezionato: cerchio pieno */
+.filter-box input[type="radio"]:checked {
+  border-color: var(--color-dark);
+}
+
+.ddl {
+  width: 313px;
+  height: 50px;
+  border-radius: 40px;
+  background-color: var(--color-blue);
+  color: #FFFF; 
+  font-family: var(--font-body);
+  font-size: 21px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23333' d='M5 7l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 40px;
+  
+}
+.select .ddl::-ms-expand {
+  display: none;
+}
+.ddl option {
+  color: white;
+}
