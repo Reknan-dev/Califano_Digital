@@ -7,7 +7,8 @@
   --color-accent:   #F2B408;
   --color-dark:     #0C404F;
   --color-blue:     #308EAA;
-
+  --color-player:   #3B6571;
+  
   --font-primary:   'AllRoundGothic';
   --font-display:   'EverLooser';
   --font-body:      'Futura';
@@ -178,10 +179,6 @@
   min-height: 200vh;
   overflow: hidden;
   box-sizing: border-box;
-
-  /* padding-top: compensa l'altezza della navbar
-     padding-bottom: sposta il centro visivo verso l'alto,
-     lontano dalla zona di overlap con la sezione successiva */
   padding-top: 80px;
   padding-bottom: 300px;
 }
@@ -1548,17 +1545,82 @@ footer {
   border-radius: 40px;
   background-color: var(--color-blue);
   color: #FFFF; 
+  padding-left: 10px;
   font-family: var(--font-body);
   font-size: 21px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23333' d='M5 7l5 5 5-5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23F2B408' d='M5 7l5 5 5-5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 40px;
+  appearance: none
   
 }
+
+.ddl-vertical {
+  width: 313px;
+  height: 50px;
+  border-radius: 40px;
+  background-color: var(--color-blue);
+  color: #FFFF; 
+  padding-left: 10px;
+  font-family: var(--font-body);
+  font-size: 21px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23F2B408' d='M5 9l5-5 5 5'/%3E%3Cpath fill='%23F2B408' d='M5 11l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 40px;
+  appearance: none
+}
+
+
 .select .ddl::-ms-expand {
   display: none;
 }
 .ddl option {
   color: white;
 }
+
+
+.player__wrapper{
+  position: relative;
+  width: 300px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+
+}
+
+.player__wrapper .player__name {
+  font-size: 21px;
+  font-family: var(--font-body);
+  color: var(--color-player);
+  font-weight: 700;
+  -webkit-text-stroke: var(--color-player);
+}
+
+.players__container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 200px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.player__wrapper .creator {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.player__wrapper .creator__frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
