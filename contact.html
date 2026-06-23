@@ -7,6 +7,8 @@
   <title>Califano Digital</title>
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -81,14 +83,24 @@
 <section class="maps">
   <h1 class="contact__title">COME <br><span>Contattarci</span></h1>
   
+  <svg width="0" height="0" style="position:absolute">
+  <defs>
+    <clipPath id="mapClip" clipPathUnits="objectBoundingBox">
+      <path d="
+        M0,0.1
+        C0.25,0 0.75,0.05 1,0.08
+        L1,0.88
+        C0.75,1 0.25,0.95 0,0.88
+        Z
+      "/>
+    </clipPath>
+  </defs>
+</svg>
+<div class="map__container">
+  <div id="map"></div>
 
-<iframe
-  width="100%"
-  height="400"
-  frameborder="0"
-  scrolling="no"
-  src="https://www.openstreetmap.org/export/embed.html?bbox=14.305%2C41.070%2C14.318%2C41.080&layer=mapnik&marker=41.07502%2C14.31174">
-</iframe>
+</div>
+
 </section>
 
   <section class="contact">
@@ -191,6 +203,13 @@ document.querySelectorAll('.menu-nav__item').forEach(item => {
   item.addEventListener('click', () => closeMenu());
 });
 
+const map = L.map('map', { zoomControl: true }).setView([41.07502, 14.31174], 15);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap'
+}).addTo(map);
+
+L.marker([41.07502, 14.31174]).addTo(map);
   </script>
 </body>
 
