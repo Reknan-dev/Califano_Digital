@@ -287,6 +287,7 @@
   border: 6px solid var(--color-accent);
   border-radius: 70px;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
 .cta-btn:hover {
@@ -468,7 +469,10 @@
   margin-top: 200px;
   transition: background-color 0.35s ease;
   cursor: pointer;
+  
 }
+
+
 
 .brand-section__cta:hover {
   background-color: var(--color-accent);

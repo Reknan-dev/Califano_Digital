@@ -111,8 +111,8 @@
     <!-- CTA buttons -->
     <div class="hero__cta-section">
       <div class="hero__cta-buttons">
-        <div class="cta-btn cta-btn--brand">PER I BRAND</div>
-        <div class="cta-btn cta-btn--creator">PER I CREATOR</div>
+        <div class="cta-btn cta-btn--brand" onclick="scrollToBrand()">PER I BRAND</div>
+        <div class="cta-btn cta-btn--creator" onclick="scrollToCreator()">PER I CREATOR</div>
       </div>
     </div>
 
@@ -173,7 +173,7 @@
 
     <!-- ── Sottosezione: Per i Brand ── -->
     <div class="brand-section__header">
-      <h1>PER I <span class="brand-section__title-accent">Brand</span></h1>
+      <h1  id="brand-section">PER I <span class="brand-section__title-accent">Brand</span></h1>
       <p>Costruiamo partnership tra brand e talent, curate in ogni dettaglio.
         Gestiamo l'intero processo per garantire coerenza, qualità e risultati.</p>
     </div>
@@ -249,15 +249,17 @@
         </div>
 
         <!-- CTA sotto l'accordion -->
-        <div class="brand-section__cta">
-          LAVORA CON<br>I NOSTRI TALENT
-        </div>
+         <a class="link-talent" href="./players.html">
+           <div class="brand-section__cta" >
+             LAVORA CON<br>I NOSTRI TALENT
+           </div>
+         </a>
 
       </div>
       <!-- /process-accordion -->
 
       <!-- Carousel immagine brand -->
-      <div class="brand-section__carousel">
+      <div id="per-i-brand" class="brand-section__carousel">
         <img src="./images/elements/PER I BRAND_Carousel.png" alt="Carousel brand">
       </div>
 
@@ -341,7 +343,7 @@
   ═══════════════════════════════════════════════════════════ -->
   <section class="creators">
 
-    <h1>PER I <span class="creators__title-accent">Creator</span></h1>
+    <h1  id="creator-section">PER I <span class="creators__title-accent">Creator</span></h1>
 
     <p class="creators__desc">
       Affianchiamo creator che vogliono trasformare il proprio progetto in qualcosa di strutturato e sostenibile.<br>
@@ -477,7 +479,6 @@
                   <img src="./images/elements/TikTok.png" alt="">
                   <p class="card__text">3K <br>Followers</p>
                 </div>
-
               </div>
             </div>
           </div>
@@ -504,7 +505,6 @@
                   <img src="./images/elements/TikTok.png" alt="">
                   <p class="card__text">19K <br>Followers</p>
                 </div>
-
               </div>
             </div>
           </div>
@@ -531,7 +531,6 @@
                   <img src="./images/elements/TikTok.png" alt="">
                   <p class="card__text">98K <br>Followers</p>
                 </div>
-
               </div>
             </div>
           </div>
@@ -554,7 +553,6 @@
                   <img src="./images/elements/TikTok.png" alt="">
                   <p class="card__text">239K <br>Followers</p>
                 </div>
-
               </div>
             </div>
           </div>
@@ -581,7 +579,6 @@
                   <img src="./images/elements/TikTok.png" alt="">
                   <p class="card__text">442K <br>Followers</p>
                 </div>
-
               </div>
             </div>
           </div>
@@ -1102,7 +1099,7 @@
               </div>
             </div>
           </div>
-            <div class="embla__slide">
+          <div class="embla__slide">
             <div class="creator__wrapper">
               <img class="creator" src="./images/talent/Spaccagiochi.png" alt="">
               <img class="creator__frame" src="./images/elements/FRAME_Talents.png" alt="">
@@ -1129,7 +1126,7 @@
               </div>
             </div>
           </div>
-           <div class="embla__slide">
+          <div class="embla__slide">
             <div class="creator__wrapper">
               <img class="creator" src="./images/talent/DavideFrasca.png" alt="">
               <img class="creator__frame" src="./images/elements/FRAME_Talents.png" alt="">
@@ -1152,7 +1149,7 @@
               </div>
             </div>
           </div>
-           <div class="embla__slide">
+          <div class="embla__slide">
             <div class="creator__wrapper">
               <img class="creator" src="./images/talent/EdeMood.png" alt="">
               <img class="creator__frame" src="./images/elements/FRAME_Talents.png" alt="">
@@ -1179,7 +1176,7 @@
               </div>
             </div>
           </div>
-           <div class="embla__slide">
+          <div class="embla__slide">
             <div class="creator__wrapper">
               <img class="creator" src="./images/talent/Never20.png" alt="">
               <img class="creator__frame" src="./images/elements/FRAME_Talents.png" alt="">
@@ -1206,7 +1203,7 @@
               </div>
             </div>
           </div>
-           <div class="embla__slide">
+          <div class="embla__slide">
             <div class="creator__wrapper">
               <img class="creator" src="./images/talent/Mochichuu.png" alt="">
               <img class="creator__frame" src="./images/elements/FRAME_Talents.png" alt="">
@@ -1229,11 +1226,10 @@
                   <img src="./images/elements/TikTok.png" alt="">
                   <p class="card__text">152K <br>Followers</p>
                 </div>
-                </div>
               </div>
             </div>
           </div>
-           <div class="embla__slide">
+          <div class="embla__slide">
             <div class="creator__wrapper">
               <img class="creator" src="./images/talent/Loon.png" alt="">
               <img class="creator__frame" src="./images/elements/FRAME_Talents.png" alt="">
@@ -1253,8 +1249,9 @@
                   <p class="card__text">222K <br>Followers</p>
                 </div>
               </div>
+            </div>
           </div>
-           <div class="embla__slide">
+          <div class="embla__slide">
             <div class="creator__wrapper">
               <img class="creator" src="./images/talent/SpiegaBro.png" alt="">
               <img class="creator__frame" src="./images/elements/FRAME_Talents.png" alt="">
@@ -1281,10 +1278,10 @@
                   <img src="./images/elements/TikTok.png" alt="">
                   <p class="card__text">39K <br>Followers</p>
                 </div>
+              </div>
             </div>
           </div>
-          
-           <div class="embla__slide">
+          <div class="embla__slide">
             <div class="creator__wrapper">
               <img class="creator" src="./images/talent/Teddino.png" alt="">
               <img class="creator__frame" src="./images/elements/FRAME_Talents.png" alt="">
@@ -1303,9 +1300,10 @@
                   <img src="./images/elements/TikTok.png" alt="">
                   <p class="card__text">41K <br>Followers</p>
                 </div>
+              </div>
             </div>
           </div>
-           <div class="embla__slide">
+          <div class="embla__slide">
             <div class="creator__wrapper">
               <img class="creator" src="./images/talent/CarlaGrimaldi.png" alt="">
               <img class="creator__frame" src="./images/elements/FRAME_Talents.png" alt="">
@@ -1316,7 +1314,6 @@
               <h2>@CARLA GRIMALDI</h2>
               <p>#FANTASYMUSIC #ANIMEMUSIC #GDR #FIDDLEPLAYER</p>
               <div class="platform__container">
-
                 <div class="platform__card">
                   <img src="./images/elements/Insta.png" alt="">
                   <p class="card__text">19K <br>Followers</p>
@@ -1329,6 +1326,7 @@
                   <img src="./images/elements/TikTok.png" alt="">
                   <p class="card__text">4K <br>Followers</p>
                 </div>
+              </div>
             </div>
           </div>
           <div class="embla__slide">
@@ -1351,8 +1349,9 @@
                   <p class="card__text">17K <br>Followers</p>
                 </div>
               </div>
+            </div>
           </div>
-           <div class="embla__slide">
+          <div class="embla__slide">
             <div class="creator__wrapper">
               <img class="creator" src="./images/talent/FinnNasoBlu.png" alt="">
               <img class="creator__frame" src="./images/elements/FRAME_Talents.png" alt="">
@@ -1372,8 +1371,9 @@
                   <p class="card__text">141K <br>Followers</p>
                 </div>
               </div>
+            </div>
           </div>
-           <div class="embla__slide">
+          <div class="embla__slide">
             <div class="creator__wrapper">
               <img class="creator" src="./images/talent/TeamRocker.png" alt="">
               <img class="creator__frame" src="./images/elements/FRAME_Talents.png" alt="">
@@ -1389,6 +1389,7 @@
                   <p class="card__text">1K <br>Followers</p>
                 </div>
               </div>
+            </div>
           </div>
           <div class="embla__slide">
             <div class="creator__wrapper">
@@ -1408,18 +1409,18 @@
                 <div class="platform__card">
                   <img src="./images/elements/Youtube.png" alt="">
                   <p class="card__text">1,8K <br>Followers</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        </div>
 
       <button class="embla__btn embla__btn--next">
         <img src="./images/elements/Freccia_Icon_2.png" alt="">
       </button>
     </div>
     <div class="dots__container">
-
       <div class="embla__dots" id="embla-dots"></div>
     </div>
 
@@ -1488,6 +1489,15 @@
     const menuBackdrop = document.getElementById('menu-backdrop');
     const hamburger = document.querySelector('.navbar__hamburger');
     const negative_hamburger = document.querySelector('.navbar__hamburger-white ')
+
+    function scrollToBrand() {
+      document.getElementById("brand-section").scrollIntoView({ behavior: "smooth" });
+    }
+
+function scrollToCreator() {
+      document.getElementById("creator-section").scrollIntoView({ behavior: "smooth" });
+    }
+
 
     function openMenu() {
       menuOverlay.classList.add('is-open');
@@ -1606,23 +1616,23 @@
       embla.on('init', renderDots);
 
       renderDots();
-      
-            let autoplay;
-      
-            const startAutoplay = () => {
-              stopAutoplay();
-              autoplay = setInterval(() => {
-                embla.scrollNext();
-              }, 3000);
-            };
-      
-            const stopAutoplay = () => {
-              if (autoplay) clearInterval(autoplay);
-            };
-      
-            embla.on('init', startAutoplay);
-            embla.on('pointerDown', stopAutoplay);
-            embla.on('pointerUp', startAutoplay);
+
+      let autoplay;
+
+      const startAutoplay = () => {
+        stopAutoplay();
+        autoplay = setInterval(() => {
+          embla.scrollNext();
+        }, 3000);
+      };
+
+      const stopAutoplay = () => {
+        if (autoplay) clearInterval(autoplay);
+      };
+
+      embla.on('init', startAutoplay);
+      embla.on('pointerDown', stopAutoplay);
+      embla.on('pointerUp', startAutoplay);
     });
   </script>
 
