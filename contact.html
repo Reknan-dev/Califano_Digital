@@ -7,8 +7,6 @@
   <title>Califano Digital</title>
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -83,12 +81,13 @@
 <section class="maps">
   <h1 class="contact__title">COME <br><span>Contattarci</span></h1>
   
-<iframe 
+
+<iframe
   width="100%"
   height="400"
   frameborder="0"
   scrolling="no"
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.7312102064707!2d14.309166676452772!3d41.074867715321375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133a55bd05cb61fd%3A0x57d6be0954fed012!2sVia%20Roma%2C%2030%2C%2081022%20Casagiove%20CE!5e0!3m2!1sit!2sit!4v1782644029597!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.7312102064766!2d14.309166676427658!3d41.074867715321396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133a55bd05cb61fd%3A0x57d6be0954fed012!2sVia%20Roma%2C%2030%2C%2081022%20Casagiove%20CE!5e0!3m2!1sit!2sit!4v1782197271356!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 </iframe>
 </section>
 
@@ -192,13 +191,6 @@ document.querySelectorAll('.menu-nav__item').forEach(item => {
   item.addEventListener('click', () => closeMenu());
 });
 
-const map = L.map('map', { zoomControl: true }).setView([41.07502, 14.31174], 15);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap'
-}).addTo(map);
-
-L.marker([41.07502, 14.31174]).addTo(map);
   </script>
 </body>
 
