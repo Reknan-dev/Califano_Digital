@@ -1,16 +1,29 @@
-* {
+/* ═══════════════════════════════════════════════════════════════
+   RESET CSS — C3 Agency
+   ─ Base comune a tutte le pagine.
+   ─ Non modificare: queste regole sono fondamentali per la
+     coerenza cross-browser e per il corretto funzionamento
+     del layout responsive.
+═══════════════════════════════════════════════════════════════ */
+
+/* Tutti gli elementi usano border-box:
+   padding e border NON aumentano la dimensione dichiarata */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   user-select: none;
 }
 
-html, body {
+/* Evita lo scroll orizzontale indesiderato su tutti i dispositivi */
+html,
+body {
   overflow-x: hidden;
 }
 
-
+/* Rimuove la sottolineatura dei link (gestita dal designer caso per caso) */
 a {
   text-decoration: none;
 }
-
