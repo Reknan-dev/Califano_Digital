@@ -1008,14 +1008,14 @@
 }
 
 .carousel__content .carousel__title h1 {
-  font-size: clamp(40px, 8vw, 120px);  /* MODIFICA RESPONSIVE: era 120px fisso */
+  font-size: clamp(40px, 8vw, 120px); 
   font-family: var(--font-primary);
   color: var(--color-primary);
   text-align: center;
 }
 
 .carousel__content .carousel__sub {
-  font-size: clamp(14px, 2vw, 30px);   /* MODIFICA RESPONSIVE: era 30px fisso */
+  font-size: clamp(14px, 2vw, 30px); 
   font-family: var(--font-body);
   color: var(--color-dark);
   text-align: center;
@@ -1023,7 +1023,7 @@
 }
 
 .carousel-section__title-accent {
-  font-size: clamp(60px, 12vw, 181px); /* MODIFICA RESPONSIVE: era 181px fisso */
+  font-size: clamp(60px, 12vw, 181px); 
   font-family: var(--font-display);
   color: var(--color-accent);
   margin-left: clamp(10px, 2vw, 40px);
@@ -1674,13 +1674,12 @@ footer {
 /* ── Griglia player cards ── */
 .player__wrapper {
   position: relative;
-  /* MODIFICA RESPONSIVE: 300px fisso → fluido */
   width: clamp(160px, 18vw, 300px);
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: clamp(30px, 6vw, 100px); /* MODIFICA RESPONSIVE: era 100px fisso */
+  margin-bottom: clamp(30px, 6vw, 100px); 
 }
 
 .player__wrapper .player__name {
@@ -1695,7 +1694,7 @@ footer {
   /* MODIFICA RESPONSIVE: 5 colonne fisse → responsive con auto-fill */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(clamp(140px, 16vw, 260px), 1fr));
-  padding: clamp(40px, 12vw, 200px);   /* MODIFICA RESPONSIVE: era 200px fisso */
+  padding: clamp(40px, 12vw, 200px);  
   width: 100%;
   box-sizing: border-box;
   gap: 20px;
@@ -1704,17 +1703,16 @@ footer {
 .player__wrapper .creator {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
 .player__wrapper .creator__frame {
   position: absolute;
-  top: 0;
+  top: -10px;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
 }
 
 /* Link talent (wrappa il CTA brand) */
@@ -1749,12 +1747,19 @@ footer {
   width: 100%;
 }
 
+.navbar__logo {
+  width: 200px;
+}
+
 }
 
 /* ── TABLET (≤ 1024px) ── */
 @media (max-width: 1024px) {
 
-
+ .description__team {
+  display: flex;
+  flex-direction: column;
+ }
 
   /* Navbar: nascondi label "OUR PLAYERS" per non sormontare il logo */
   .navbar__players-label {
@@ -1823,6 +1828,10 @@ footer {
     display: none;
   }
 
+  .navbar__logo {
+    margin-bottom: 40px;
+  }
+
   .navbar__logo-wrapper {
   position: absolute;
   left: 50%;
@@ -1883,6 +1892,16 @@ footer {
     align-items:center;
     gap:10px;
 }
+
+.card__divider, .card__bottom, .card__sub {
+  margin-top: 0;
+}
+
+.card__divider {
+  display: none;
+}
+
+
 
 .card__header{
     display:flex;
@@ -1956,8 +1975,6 @@ footer {
     align-items: center;
     text-align: center;
   }
-
-
 
   .footer__logo-container {
     margin-top: 30px;
