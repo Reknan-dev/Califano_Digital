@@ -960,32 +960,38 @@
 
 /* Dati creator accanto all'immagine */
 .creator__data h2 {
-  font-size: clamp(26px, 4vw, 63px);   /* MODIFICA RESPONSIVE: era 63px fisso */
+  font-size: clamp(26px, 4vw, 63px);   
   font-family: var(--font-grafton);
   color: var(--color-dark);
 }
 
 .creator__data p {
-  font-size: clamp(14px, 2.2vw, 32px); /* MODIFICA RESPONSIVE: era 32px fisso */
+  font-size: clamp(14px, 2.2vw, 32px); 
   font-family: var(--font-body);
   color: var(--color-blue);
 }
 
 .platform__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:20px;
+    width:100%;
 }
 
 .platform__card {
-  position: relative;
-  padding: 0;
-  margin: 0;
+    position:relative;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .platform__card img {
   /* MODIFICA RESPONSIVE: 400px fisso → fluido */
-  width: clamp(120px, 22vw, 400px);
-  display: block;
+    width:100%;
+    max-width:400px;
+    height:auto;
+    display:block;
 }
 
 .platform__card .card__text {
@@ -993,9 +999,13 @@
   text-align: center;
   top: 32%;
   left: 23%;
-  font-size: clamp(14px, 2.2vw, 34px); /* MODIFICA RESPONSIVE: era 34px fisso */
+  font-size: clamp(14px, 2.2vw, 34px);
+  display: block;
   color: #FFFF;
   font-family: var(--font-grafton);
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 /* Header sezione carousel players */
@@ -1437,17 +1447,17 @@ footer {
   align-items: center;
   font-family: var(--font-primary);
   color: var(--color-primary);
-  font-size: clamp(20px, 3vw, 40px);    /* MODIFICA RESPONSIVE: era 40px fisso */
+  font-size: clamp(20px, 3vw, 40px);
   line-height: 1;
   height: 58px;
   padding-top: 17px;
   padding-bottom: 6px;
 
   /* Versione con background — usata come banner header */
-  background-image: url(../../images/elements/BG_TalentPage_BGLines.png);
+  background-image: url(../../images/elements/HEADER_Menu_Background\ e\ Lines.png);
   background-size: cover;
   background-position: center;
-  height: clamp(120px, 18vw, 300px);   /* MODIFICA RESPONSIVE: era 300px fisso */
+  height: clamp(120px, 18vw, 300px);
   width: 100%;
 }
 
@@ -1457,7 +1467,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: clamp(60px, 18vw, 300px); /* MODIFICA RESPONSIVE: era 300px fisso */
+  padding-top: clamp(60px, 18vw, 300px);
 }
 
 .description__team h1 {
@@ -1466,17 +1476,17 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: clamp(40px, 7vw, 106px);  /* MODIFICA RESPONSIVE: era 106px fisso */
+  font-size: clamp(40px, 7vw, 106px); 
   font-family: var(--font-primary);
   color: var(--color-primary);
 }
 
 .description__team h1 span {
-  font-size: clamp(80px, 13vw, 200px); /* MODIFICA RESPONSIVE: era 200px fisso */
+  font-size: clamp(80px, 13vw, 200px);
 }
 
 .description__container {
-  font-size: clamp(14px, 1.6vw, 23px); /* MODIFICA RESPONSIVE: era 23px fisso */
+  font-size: clamp(14px, 1.6vw, 23px);
   font-family: var(--font-body);
   width: 90%;
   max-width: 60%;
@@ -1557,11 +1567,11 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: clamp(80px, 14vw, 200px); /* MODIFICA RESPONSIVE: era 200px fisso */
+  padding-top: clamp(80px, 14vw, 200px); 
 }
 
 .players h1 {
-  font-size: clamp(48px, 8vw, 125px);  /* MODIFICA RESPONSIVE: era 125px fisso */
+  font-size: clamp(48px, 8vw, 125px);  
   color: var(--color-primary);
   font-family: var(--font-primary);
   text-align: center;
@@ -1720,7 +1730,152 @@ footer {
   display: inline-block;
 }
 
+.talent__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  padding-top: clamp(120px, 20vw, 300px);
+  padding-bottom: clamp(40px, 8vw, 100px);
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  background-image: url("../../images/elements/BG_TalentPage_BGLines.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.talent-image {
+  width: clamp(220px, 40vw, 656px);
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.talent-info__container h2 {
+  font-size: clamp(32px, 5vw, 63px);   /* era 63px fisso */
+  color: var(--color-dark);
+  text-align: left;
+  font-family: var(--font-grafton);
+  margin-bottom: 20px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(12px, 2.5vw, 30px);       /* era 30px fisso */
+  flex-wrap: wrap;
+
+}
+
+.tag-detail {
+  background-color: var(--color-blue);
+  border-radius: 35px;
+  padding: 8px clamp(12px, 2vw, 16px);
+  color: white;
+  font-size: clamp(14px, 2vw, 24px);   /* era 24px fisso */
+  font-family: var(--font-grafton);
+  white-space: nowrap;
+}
+
+
+.talent-info__container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+.talent-main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(24px, 6vw, 80px);         /* era 80px fisso */
+  flex-wrap: wrap;  
+}
+
+
+.sub__container {
+  font-size: clamp(16px, 2vw, 25px);   /* era 25px fisso */
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  text-align: left;
+  width: 90%;
+  max-width: 900px;
+}
+
+.sub__container span {
+  font-weight: bold;
+}
+
+.collaboration__container {
+  width: 100%;
+  font-size: clamp(22px, 3.5vw, 38px); /* era 38px fisso */
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  padding-top: clamp(30px, 6vw, 74px); /* era 74px fisso */
+}
+
+
+.collaboration__container h4 {
+  width: 100%;
+  font-size: 38px;
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  padding-top: 74px;
+}
+
+.list ul li {
+  font-weight: bold;
+  font-size: clamp(15px, 1.8vw, 21px); /* era 21px fisso */
+  line-height: 1.5;                    /* era 33px fisso */
+  list-style: none;
+  width: 100%;
+  
+}
+
+.talent-banner{
+  width: 100%;
+  min-height: clamp(200px, 30vw, 500px);
+}
+
+.btn-talents__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 6vw, 100px);        /* era 100px fisso */
+  flex-wrap: wrap;
+  color: var(--color-blue);
+  font-weight: bold;
+  font-family: var(--font-primary);
+  font-size: clamp(18px, 2.5vw, 33px); /* era 33px fisso */
+  margin-top: clamp(30px, 5vw, 56px);
+  margin-bottom: 23px;
+  text-align: center;
+}
+
+.btn-talents__container .btn-talent {
+  border: 4px solid var(--color-accent);
+  border-radius: 58px;
+  padding: clamp(12px, 2vw, 17px) clamp(24px, 6vw, 80px); /* era 17px 80px fisso */
+  transition: 0.3s;
+  cursor: pointer;
+} 
+
+.btn-talents__container .btn-talent:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
 /* ═══════════════════════════════════════════════════════════════
    MEDIA QUERIES
    ─ Breakpoint: Tablet (≤ 1024px) e Mobile (≤ 600px)
@@ -1788,7 +1943,7 @@ footer {
     justify-content: center;
   }
 
-  .platform__container {
+  .creator__data .platform__container {
     display: none;
   }
 
@@ -1814,7 +1969,33 @@ footer {
   .card {
     min-height: 250px;
   }
+
+  .talent-main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tag,
+  .platform__container {
+    justify-content: center;
+  }
+
+  .talent-info__container h2 {
+    text-align: center;
+  }
+
+  .sub__container {
+    width: 90%;
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .collaboration__container h4 {
+    text-align: center;
+  }
 }
+
 
 /* ── MOBILE (≤ 600px) ── */
 @media (max-width: 600px) {
@@ -1956,7 +2137,7 @@ footer {
     aspect-ratio: 478 / 566;
   }
 
-    .platform__container {
+   .creator__data .platform__container {
     display: none;
   }
 
@@ -2015,5 +2196,20 @@ footer {
   .description__container {
     width: 90%;
     max-width: 100%;
+  }
+
+   .btn-talents__container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .btn-talents__container .btn-talent {
+    width: 90%;
+    box-sizing: border-box;
+    padding: 14px 20px;
+  }
+
+  .tag-detail {
+    font-size: 14px;
   }
 }

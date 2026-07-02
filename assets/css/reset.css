@@ -26,4 +26,5 @@ body {
 /* Rimuove la sottolineatura dei link (gestita dal designer caso per caso) */
 a {
   text-decoration: none;
+  color: inherit;
 }
