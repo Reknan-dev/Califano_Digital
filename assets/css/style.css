@@ -974,7 +974,6 @@
 .platform__container {
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:20px;
     width:100%;
 }
 
@@ -987,11 +986,10 @@
 }
 
 .platform__card img {
-  /* MODIFICA RESPONSIVE: 400px fisso → fluido */
-    width:100%;
-    max-width:400px;
-    height:auto;
-    display:block;
+  width: 100%;
+  max-width: 400px;   /* invece di 400px, così la colonna "sembra" più stretta visivamente */
+  height: auto;
+  display: block;
 }
 
 .platform__card .card__text {
@@ -999,7 +997,7 @@
   text-align: center;
   top: 32%;
   left: 23%;
-  font-size: clamp(14px, 2.2vw, 34px);
+  font-size: 34px;
   display: block;
   color: #FFFF;
   font-family: var(--font-grafton);
@@ -1567,7 +1565,7 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: clamp(80px, 14vw, 200px); 
+  padding-top: 300px; 
 }
 
 .players h1 {
@@ -1685,15 +1683,18 @@ footer {
 .player__wrapper {
   position: relative;
   width: clamp(160px, 18vw, 300px);
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: clamp(30px, 6vw, 100px); 
+  aspect-ratio: 478 / 566;   /* altezza del wrapper = altezza della cornice */
+  margin-bottom: clamp(30px, 6vw, 100px);
 }
 
 .player__wrapper .player__name {
-  font-size: clamp(12px, 1.5vw, 21px); /* MODIFICA RESPONSIVE: era 21px fisso */
+  position: absolute;
+  top: 100%;                 /* subito sotto il wrapper (= sotto la cornice) */
+  left: 0;
+  width: 100%;
+  margin-top: 16px;          /* qui regoli la distanza */
+  text-align: center;
+  font-size: clamp(12px, 1.5vw, 21px);
   font-family: var(--font-body);
   color: var(--color-player);
   font-weight: 700;
@@ -1701,7 +1702,7 @@ footer {
 }
 
 .players__container {
-  /* MODIFICA RESPONSIVE: 5 colonne fisse → responsive con auto-fill */
+
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(clamp(140px, 16vw, 260px), 1fr));
   padding: clamp(40px, 12vw, 200px);  
@@ -1711,19 +1712,24 @@ footer {
 }
 
 .player__wrapper .creator {
+  position: absolute;
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
 .player__wrapper .creator__frame {
   position: absolute;
-  top: -10px;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: contain;
+  pointer-events: none;
 }
+
+
+
 
 /* Link talent (wrappa il CTA brand) */
 .link-talent {
@@ -1811,7 +1817,6 @@ footer {
   color: var(--color-dark);
   text-align: left;
   width: 90%;
-  max-width: 900px;
 }
 
 .sub__container span {
@@ -1823,7 +1828,7 @@ footer {
   font-size: clamp(22px, 3.5vw, 38px); /* era 38px fisso */
   font-family: var(--font-body);
   color: var(--color-dark);
-  padding-top: clamp(30px, 6vw, 74px); /* era 74px fisso */
+  padding-top: clamp(30px, 6vw, 22px);
 }
 
 
@@ -1853,7 +1858,8 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(20px, 6vw, 100px);        /* era 100px fisso */
+  width: 100%;
+  gap: clamp(20px, 6vw, 100px);      
   flex-wrap: wrap;
   color: var(--color-blue);
   font-weight: bold;
@@ -1870,6 +1876,7 @@ footer {
   padding: clamp(12px, 2vw, 17px) clamp(24px, 6vw, 80px); /* era 17px 80px fisso */
   transition: 0.3s;
   cursor: pointer;
+  display: inline-block;
 } 
 
 .btn-talents__container .btn-talent:hover {
@@ -1994,11 +2001,15 @@ footer {
   .collaboration__container h4 {
     text-align: center;
   }
+
+  .collaboration__container h4 {
+    text-align: center;
+}
 }
 
 
 /* ── MOBILE (≤ 600px) ── */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
 
   .creators {
     padding-bottom: 300px;
@@ -2198,6 +2209,9 @@ footer {
     max-width: 100%;
   }
 
+  .description__team h1 {
+    margin-top: 50px;
+  }
    .btn-talents__container {
     flex-direction: column;
     gap: 16px;
@@ -2212,4 +2226,33 @@ footer {
   .tag-detail {
     font-size: 14px;
   }
+
+  .platform__card .card__text {
+    font-size: 20px;
+  }
+
+  .platform__card {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .sub__container {
+  width: 45%;
+  text-align: left;
+}
+
+.platform__container {
+    display:grid;
+    grid-template-columns:repeat(1,minmax(0,1fr));
+    width:100%;
+}
+.discover-more img {
+  width: 300px;
+  height: 130px;
+}
+
+.collaboration__container h4 {
+
+  text-align: center;
+}
 }
