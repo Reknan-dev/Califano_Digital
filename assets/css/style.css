@@ -6,7 +6,7 @@
 
 :root {
   --color-primary:  #27539F;
-  --color-accent:   #F2B408;
+  --color-accent:   rgb(242, 180, 7);
   --color-dark:     #0C404F;
   --color-blue:     #308EAA;
   --color-player:   #3B6571;
@@ -1883,6 +1883,8 @@ footer {
   background-color: var(--color-accent);
   color: white;
 }
+
+
 /* ═══════════════════════════════════════════════════════════════
    MEDIA QUERIES
    ─ Breakpoint: Tablet (≤ 1024px) e Mobile (≤ 600px)
